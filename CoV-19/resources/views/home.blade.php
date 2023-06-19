@@ -6,6 +6,6 @@
   <title>CoV-19</title>
 </head>
 <body>
-  
+  <h1>Home.Blade.php</h1>
 </body>
 </html>
