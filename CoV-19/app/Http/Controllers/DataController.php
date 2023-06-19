@@ -15,6 +15,13 @@ class DataController extends Controller
         return view('home');
     }
    
+    public function read()
+    {
+        $latestValue = covid_19_detail::max('created_at');
+        $data = covid_19_detail::where('created_at', $latestValue) -> first();
+
+        return view ('home', ['detail' => $data]);
+    }
    
     public function store()
    {
@@ -43,8 +50,6 @@ class DataController extends Controller
     $covid_19_detail->save();
 
     return redirect() ->route('Home');
-
-
 
    }
 }
