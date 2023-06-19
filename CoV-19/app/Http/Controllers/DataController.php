@@ -49,7 +49,20 @@ class DataController extends Controller
 
     $covid_19_detail->save();
 
-    return redirect() ->route('read');
+    return redirect() ->route('delete');
+
+   }
+
+   public function destroy()
+   {
+    $oldestValue = covid_19_detail::min('created_at');
+    $data = covid_19_detail::where('created_at', $oldestValue) -> first();
+    //dd($data);
+    if($data) {
+        $data ->where('created_at', $oldestValue) -> delete();
+    }
+
+    return redirect() -> route('read');
 
    }
 }
