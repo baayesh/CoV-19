@@ -49,7 +49,7 @@ class DataController extends Controller
 
     $covid_19_detail->save();
 
-    return redirect() ->route('Home');
+    return redirect() ->route('read');
 
    }
 }

@@ -18,6 +18,6 @@ Route::get('/', function () {
 });
 
 //route for store products
-Route::get('update-data', [DataController::class,'store']) -> name('UpdateData');
-Route::get('home', [DataController::class,'index']) -> name('Home');
+Route::post('update-data', [DataController::class,'store']) -> name('UpdateData');
 Route::get('read', [DataController::class,'read']) -> name('read');
+Route::get('old-data', [DataController::class, 'destroy']) -> ('delete');
