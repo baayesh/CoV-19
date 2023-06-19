@@ -3,47 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ asset('css/homeStyles.css') }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha256-fx038NkLY4U1TCrBDiu5FWPEa9eiZu01EiLryshJbCo=" crossorigin="anonymous">
   <title>CoV-19</title>
 </head>
-<body>
-  <h1>Home.Blade.php</h1>
-  <table border="1">
-    <tr>
-      <th>local_new_cases</th>
-      <th>local_total_cases</th>
-      <th>number_of_individuals_in_hospitals</th>
-      <th>local_deaths</th>
-      <th>local_new_deaths</th>
-      <th>local_recovered</th>
-      <th>local_active_cases</th>
-      <th>global_new_cases</th>
-      <th>global_total_cases</th>
-      <th>global_deaths</th>
-      <th>global_new_deaths</th>
-      <th>global_recovered</th>
-      <th>total_pcr_testing_count</th>
-    </tr>
-    <tr>
-      <td>{{$detail['local_new_cases']}}</td>
-      <td>{{$detail['local_total_cases']}}</td>
-      <td>{{$detail['number_of_individuals_in_hospitals']}}</td>
-      <td>{{$detail['local_new_deaths']}}</td>
-      <td>{{$detail['local_total_cases']}}</td>
-      <td>{{$detail['local_recovered']}}</td>
-      <td>{{$detail['local_active_cases']}}</td>
-      <td>{{$detail['global_new_cases']}}</td>
-      <td>{{$detail['global_total_cases']}}</td>
-      <td>{{$detail['global_deaths']}}</td>
-      <td>{{$detail['global_new_deaths']}}</td>
-      <td>{{$detail['global_recovered']}}</td>
-      <td>{{$detail['total_pcr_testing_count']}}</td>
-    </tr>
-  </table>
+  <section class="lis-bg-light">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 text-center">
+                        <div class="heading pb-4 ">
+                            <h2>Covid 19 Cases</h2>
+                            <h5 class="font-weight-normal lis-light"> Don't Go outside Without Masks </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-md-6 wow fadeInUp mb-5 mb-lg-0 text-center" style="visibility: visible; animation-name: fadeInUp;">
+                        <div class="covid-table">
+                            <div class="covid-header lis-bg-red lis-rounded-top py-4 border border-bottom-0 lis-brd-light">
+                            <h5 class="text-uppercase lis-latter-spacing-2 text-white">Local</h5>
+                                <h1 class="display-4 lis-font-weight-500 text-white">{{$detail['local_new_cases']}}</h1>
+                                <p class="mb-0 text-white">Reported New Cases</p>
+                            </div>
+                            <div class="border border-top-0 lis-brd-light bg-white py-5 lis-rounded-bottom">
+                                <ul class="list-unstyled lis-line-height-3">
+                                    <li>{{$detail['local_active_cases']}} - Active Cases</li>
+                                    <li>{{$detail['local_total_cases']}} - All Cases Reported</li>
+                                    <li>{{$detail['number_of_individuals_in_hospitals']}} - Total Individuals in Hospitals</li>
+                                    <li>{{$detail['local_new_deaths']}} - New Deaths</li>
+                                    <li>{{$detail['local_deaths']}} - Total Deaths</li>
+                                    <li class="recovered">{{$detail['local_recovered']}} - Recovered</li>
+                                </ul>
+                                <div class="lis-rounded-circle-50" data-abc="true"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-md-6 wow fadeInUp mb-5 mb-lg-0 text-center" style="visibility: visible; animation-name: fadeInUp;">
+                        <div class="covid-table">
+                            <div class="covid-header lis-bg-red lis-rounded-top py-4 border border-bottom-0 lis-brd-light">
+                            <h5 class="text-uppercase lis-latter-spacing-2 text-white">Global</h5>
+                                <h1 class="display-4 lis-font-weight-500 text-white">{{$detail['global_new_cases']}}</h1>
+                                <p class="mb-0 text-white">Reported New Cases</p>
+                            </div>
+                            <div class="border border-top-0 lis-brd-light bg-white py-5 lis-rounded-bottom">
+                                <ul class="list-unstyled lis-line-height-3">
+                                    <li>{{$detail['local_active_cases']}} - Active Cases</li>
+                                    <li>{{$detail['global_total_cases']}} - All Cases Reported</li>
+                                    <li>{{$detail['number_of_individuals_in_hospitals']}} - Total Individuals in Hospitals</li>
+                                    <li>{{$detail['global_new_deaths']}} - New Deaths</li>
+                                    <li>{{$detail['global_deaths']}} - Total Deaths</li>
+                                    <li class="recovered">{{$detail['global_recovered']}} - Recovered</li>
+                                </ul>
+                                <div class="lis-rounded-circle-50" data-abc="true"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+              <form method="POST" action="{{route('UpdateData')}}">
+                @csrf
+                <button type="Submit" class="btn-middle btn-hover ">Updated Data</button>
+              </form>
+            </div>
+        </section>
 
-  <form method="POST" action="{{route('UpdateData')}}">
-      @csrf
-      <button type="Submit">Update Data</button>
-  </form>
+ 
+
 </body>
 </html>
 

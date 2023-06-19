@@ -1,0 +1,175 @@
+.lis-bg-light {
+  background-color: #00000005;
+}
+
+.lis-bg-red{
+  background-color: #a90627;
+}
+
+section {
+  padding-top: 6.25em;
+  padding-bottom: 6.25em;
+  position: relative;
+}
+
+.pb-4, .py-4 {
+  padding-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #222222;
+  margin: 0 0 15px;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.75rem;
+}
+
+.lis-light {
+  color: #707070;
+}
+
+
+.font-weight-normal {
+  font-weight: 400!important;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+.covid-table {
+  webkit-transition: 0.3s ease;
+}
+
+.lis-brd-light {
+  border-color: #dadada !important;
+}
+
+.lis-rounded-top {
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+.lis-bg-light {
+  background-color: #f7f7f7;
+}
+
+.pb-4, .py-4 {
+  padding-bottom: 1.5rem!important;
+}
+.lis-latter-spacing-2 {
+  letter-spacing: 2px;
+}
+
+.text-uppercase {
+  text-transform: uppercase!important;
+}
+
+.lis-font-weight-500 {
+  font-weight: 500;
+}
+
+.lis-font-weight-200{
+  font-weight: 200;
+}
+
+.display-4 {
+  font-size: 3.5rem;
+}
+
+.covid-table sup {
+  top: -1.5em;
+}
+
+.covid-table sup, .covid-table small {
+  font-size: 1.25rem;
+}
+.covid-table small {
+  font-size: 1.25rem;
+}
+
+.mb-0, .my-0 {
+  margin-bottom: 0!important;
+}
+
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+}
+
+.lis-brd-light {
+  border-color: #dadada !important;
+}
+.recovered{
+  background-color: green;
+  color: aliceblue;
+}
+.bg-white {
+  background-color: #fff!important;
+}
+.py-5 {
+  padding-bottom: 3rem!important;
+}
+.lis-line-height-3 {
+  line-height: 3 !important;
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.lis-line-height-3 {
+  line-height: 3 !important;
+}
+
+
+.lis-rounded-circle-50 {
+  border-radius: 50px;
+}
+
+.pl-2, .px-2 {
+  padding-right: .5rem!important;
+}
+
+.lis-bg-primary {
+  background-color: #FF6666;
+}
+
+.covid-table.active {
+  transform: scale(1.045);
+  -webkit-transform: scale(1.045);
+}
+
+.covid-table {
+  -webkit-transition: 0.3s ease;
+}
+
+.lis-rounded-bottom {
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.btn-middle{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  background-color: green;
+  border-color: transparent;
+  color: #fff;
+  border-radius:1.5mm;
+  height: 35px;
+  padding-top: 5px;
+  margin-top: 30px;
+
+}
+
+.btn-hover:hover{
+  background-color: #fff;
+  color: black;
+  border-color: green;
+}

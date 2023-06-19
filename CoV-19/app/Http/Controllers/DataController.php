@@ -36,8 +36,8 @@ class DataController extends Controller
     $covid_19_detail -> local_new_cases = $dataArray['local_new_cases'];
     $covid_19_detail -> local_total_cases = $dataArray['local_total_cases'];
     $covid_19_detail -> number_of_individuals_in_hospitals = $dataArray['local_total_number_of_individuals_in_hospitals'];
-    $covid_19_detail -> local_deaths = $dataArray['local_new_deaths'];
-    $covid_19_detail -> local_new_deaths = $dataArray['local_total_cases'];
+    $covid_19_detail -> local_deaths = $dataArray['local_deaths'];
+    $covid_19_detail -> local_new_deaths = $dataArray['local_new_deaths'];
     $covid_19_detail -> local_recovered = $dataArray['local_recovered'];
     $covid_19_detail -> local_active_cases= $dataArray['local_active_cases'];
     $covid_19_detail -> global_new_cases = $dataArray['global_new_cases'];
@@ -57,7 +57,6 @@ class DataController extends Controller
    {
     $oldestValue = covid_19_detail::min('created_at');
     $data = covid_19_detail::where('created_at', $oldestValue) -> first();
-    //dd($data);
     if($data) {
         $data ->where('created_at', $oldestValue) -> delete();
     }

@@ -13,11 +13,8 @@ use App\Http\Controllers\DataController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-//route for store products
+
 Route::post('update-data', [DataController::class,'store']) -> name('UpdateData');
-Route::get('read', [DataController::class,'read']) -> name('read');
+Route::get('/', [DataController::class,'read']) -> name('read');
 Route::get('old-data', [DataController::class, 'destroy']) -> name('delete');
