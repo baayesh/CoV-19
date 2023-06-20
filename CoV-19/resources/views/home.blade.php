@@ -76,7 +76,11 @@
             <div>
               <form method="POST" action="{{route('UpdateData')}}">
                 @csrf
-                <button type="Submit" class="btn-middle btn-hover ">Updated Data</button>
+                <button type="Submit" class="btn-middle btn-hover ">Access to Updated Data</button>
+              </form>
+              <form method="GET" action="{{route('HelpAndGuide')}}">
+                @csrf
+                <button type="Submit" class="btn-middle btn-hover ">Get Help from Others</button>
               </form>
             </div>
         </section>
