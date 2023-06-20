@@ -3,6 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
         {{ __('Help & Guide') }}
         </h2>
+        <p class="mt-3">You can excahnge your experieces with our commuinity. It will help to save atleast one of valuable human life</p>
     </x-slot>
 
     <div class="py-12">
@@ -19,9 +20,8 @@
                         <div style="margin-top:20px">
                         <x-input-label for="Description" :value="__('Description')" />
                         <!-- Description -->
-                        <textarea name="description" id="description" class="form-control w-full mt-1" rows="8" required></textarea>
-                        <button type="submit" class="btn btn-primary" >Help and Guide People</button>
-
+                        <textarea name="description" id="description" class="form-control w-full mt-1" rows="3" required></textarea>
+                        <button type="submit" class="" >Share</button>
                     </form>
                 </div>
             </div>

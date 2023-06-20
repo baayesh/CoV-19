@@ -121,3 +121,15 @@
 .widget-49-mar{
   margin-left: 80px;
 }
+.home{
+  margin-left: 5px;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.home-hover:hover{
+  background-color: green;
+  color: white;
+
+}

@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/', [DataController::class, 'read'])->name('read');
+Route::get('/', [DataController::class, 'read'])->name('home');
 Route::post('/update-data', [DataController::class, 'store']) ->name('UpdateData');
 Route::get('/delete', [DataController::class, 'destroy']) -> name('delete');
 

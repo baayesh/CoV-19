@@ -9,6 +9,9 @@
 </head>
 <body>
 
+    <a href="{{route('home')}}" class="home home-hover">Home</a>
+    <a href="{{route('dashboard')}}" class="home home-hover">Help & Guide People</a>
+    
     @foreach($HelpAndGuide as $hag)
     <a href="{{$hag['link']}}" class="undeline-remove">
       <div class="container mt-5 ">

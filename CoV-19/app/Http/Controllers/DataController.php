@@ -57,7 +57,7 @@ class DataController extends Controller
         $data ->where('created_at', $oldestValue) -> delete();
     }
 
-    return redirect() -> route('read');
+    return redirect() -> route('home');
 
    }
 }

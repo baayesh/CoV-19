@@ -11,7 +11,7 @@
         @if (Route::has('login'))
             <div class="d-flex justify-content-end align-items-center lis-bg-light p2">
                 @auth
-                    <a href="{{ url('/dashboard') }}" class="remove-underline user-hover top-pannel">Dashboard</a>
+                    <a href="{{ url('/dashboard') }}" class="remove-underline user-hover top-pannel">Help & Guide People</a>
                     @else
                     <a href="{{ route('login') }}" class="remove-underline user-hover top-pannel">Log in</a>
 
