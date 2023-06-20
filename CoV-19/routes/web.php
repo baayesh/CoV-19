@@ -35,4 +35,6 @@ Route::post('/update-data', [DataController::class, 'store']) ->name('UpdateData
 Route::get('/delete', [DataController::class, 'destroy']) -> name('delete');
 
 Route::get('/help-and-guide', [HelpAndGuideController::class, 'show']) -> name('HelpAndGuide');
+Route::get('/add-first-data', [DataController::class, 'firstData'])->name('FirstData');
+
 

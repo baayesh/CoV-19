@@ -24,7 +24,5 @@ class covid_19_detail extends Model
         'global_recovered',
         'total_pcr_testing_count',
     ];
-    //public $timestamps = true;
-    //const CREATED_AT = 'created_at';
-    //const UPDATED_AT ='updated_at';
+
 }

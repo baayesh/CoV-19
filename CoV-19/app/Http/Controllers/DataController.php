@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\covid_19_detail;
+use Exception;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\DB;
 
@@ -14,20 +15,20 @@ class DataController extends Controller
     //get values from database 
     public function read()
     {
-
-
-           DB::connection()->getPdo();
-           if(DB::connection()->getDatabaseName()){
-                
-                $latestValue = covid_19_detail::max('id');
-                $data = covid_19_detail::where('id', $latestValue) -> first();
-        
-               if(!$data){
-                    return redirect() ->route('UpdateData');
-               }
-                
-                return view ('home', ['detail' => $data]);
-           }
+       try{
+            $latestValue = covid_19_detail::max('id');
+            $data = covid_19_detail::where('id', $latestValue) -> first();
+            
+            if(!$data){
+                return redirect()->route('FirstData');
+            }
+                    
+            return view ('home', ['detail' => $data]);
+            
+        }
+     catch(Exception){
+        abort(404);
+     }
 
 
     }
@@ -64,23 +65,39 @@ class DataController extends Controller
 
     ];
 
+    //To keep only 5 data
     covid_19_detail::insert($covid19Data);
 
-    return redirect() ->route('delete');
+    $count = DB::table('covid_19_details')->count();
+    if($count<5)
+    {
+      return redirect() -> route('home');
+    }
+    else
+    {
+       return redirect() ->route('delete');
+    }
+    
+    
 
    }
 
    //Delete Old Data
    public function destroy()
    {
-    $oldestValue = covid_19_detail::min('created_at');
-    $data = covid_19_detail::where('created_at', $oldestValue) -> first();
+    $oldestValue = covid_19_detail::min('id');
+    $data = covid_19_detail::where('id', $oldestValue) -> first();
     if($data) {
-        $data ->where('created_at', $oldestValue) -> delete();
+        $data ->where('id', $oldestValue) -> delete();
     }
 
     return redirect() -> route('home');
 
+   }
+
+   public function firstData()
+   {
+    return view('firstData');
    }
 }
     
