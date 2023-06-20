@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +16,18 @@ use App\Http\Controllers\DataController;
 */
 
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::post('update-data', [DataController::class,'store']) -> name('UpdateData');
-Route::get('/', [DataController::class,'read']) -> name('read');
-Route::get('old-data', [DataController::class, 'destroy']) -> name('delete');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
+
+Route::get('/', [DataController::class, 'read'])->name('read');
+Route::post('/update-data', [DataController::class, 'store']) ->name('UpdateData');
+Route::get('/delete', [DataController::class, 'destroy']) -> name('delete');
