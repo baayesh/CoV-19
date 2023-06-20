@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\HelpAndGuideController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::post('/new-help-and-guide', [HelpAndGuideController::class, 'store'])->name('storeHelpAndGuide');
 });
 
 require __DIR__.'/auth.php';
@@ -31,3 +33,6 @@ require __DIR__.'/auth.php';
 Route::get('/', [DataController::class, 'read'])->name('read');
 Route::post('/update-data', [DataController::class, 'store']) ->name('UpdateData');
 Route::get('/delete', [DataController::class, 'destroy']) -> name('delete');
+
+Route::get('/help-and-guide', [HelpAndGuideController::class, 'show']) -> name('HelpAndGuide');
+

@@ -10,10 +10,6 @@ use Illuminate\Support\Facades\Http;
 
 class DataController extends Controller
 {
-    public function index()
-    {
-        return view('home');
-    }
    
     public function read()
     {
