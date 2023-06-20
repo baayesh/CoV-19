@@ -7,18 +7,28 @@ use Illuminate\Http\Request;
 
 class HelpAndGuideController extends Controller
 {
-    public function store(Request $request){
+    public function store(Request $request)
+    {
+        $request -> validate([
+            'link' => 'required',
+            'description'=>  "required"
+        ]);
+
         $helpAndGuide = new help_and_guide;
 
-        $helpAndGuide -> title = $request -> input('title');
+        $helpAndGuide -> link = $request -> input('link');
         $helpAndGuide -> description = $request -> input('description');
+        $helpAndGuide -> user = $request -> user() -> name;
 
         $helpAndGuide -> save();
 
-        return redirect() -> route('read');
+        return redirect() -> route('HelpAndGuide');
     }
 
-    public function show(string $id){
-        
-    }
+    public function show()
+    {
+        $data = help_and_guide::all();
+        return view ('HelpAndGuide', ['HelpAndGuide' => $data]);
+    }  
+    
 }

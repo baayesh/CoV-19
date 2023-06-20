@@ -13,8 +13,8 @@
                         @csrf
                         <!-- Title -->
                         <div class="mt-4">
-                            <x-input-label for="Title" :value="__('Title')" />
-                            <textarea id="title" class="form-control w-full mt-1" type="" name="title" rows="1" required> </textarea>
+                            <x-input-label for="Link" :value="__('Link')" />
+                            <textarea id="link" class="form-control w-full mt-1" type="" name="link" rows="1" required> </textarea>
                         </div>
                         <div style="margin-top:20px">
                         <x-input-label for="Description" :value="__('Description')" />

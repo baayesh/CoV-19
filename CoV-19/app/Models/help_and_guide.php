@@ -10,8 +10,9 @@ class help_and_guide extends Model
     use HasFactory;
     protected $table = 'help_and_guides';
     protected $fillable =[
-        'title',
+        'link',
         'description',
+        'user'
 
     ];
 }
