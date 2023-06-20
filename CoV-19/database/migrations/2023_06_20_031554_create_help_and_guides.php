@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('help_and_guides', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
+            $table->string('user');
+            $table->string('link');
             $table->string('description');
             $table->timestamps();
         });
