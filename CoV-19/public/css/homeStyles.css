@@ -184,6 +184,7 @@ sup {
 .pcr{
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .remove-underline{

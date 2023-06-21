@@ -3,7 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
         {{ __('Help & Guide') }}
         </h2>
-        <p class="mt-3">You can excahnge your experieces with our commuinity. It will help to save atleast one of valuable human life</p>
+        <p class="mt-3">You can exchange your experiences with our community. It will help to save at least one valuable human life</p>
     </x-slot>
 
     <div class="py-12">

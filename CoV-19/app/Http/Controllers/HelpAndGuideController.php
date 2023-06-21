@@ -14,6 +14,8 @@ class HelpAndGuideController extends Controller
             'description'=>  "required"
         ]);
 
+        try
+        {
         $helpAndGuide = new help_and_guide;
 
         $helpAndGuide -> link = $request -> input('link');
@@ -23,12 +25,29 @@ class HelpAndGuideController extends Controller
         $helpAndGuide -> save();
 
         return redirect() -> route('HelpAndGuide');
+        }
+        catch(\Exception)
+        {
+            return redirect() -> route('HelpAndGuide');
+        }
+        
     }
 
     public function show()
     {
-        $data = help_and_guide::all();
-        return view ('HelpAndGuide', ['HelpAndGuide' => $data]);
+        try
+        {
+            $data = help_and_guide::all();
+            if($data->isEmpty()){
+                return redirect() ->route('dashboard');
+            }
+            return view ('HelpAndGuide', ['HelpAndGuide' => $data]);
+        }
+        catch(\Exception)
+        {
+            abort(419);
+        }
+
     }  
     
 }

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{ asset('css/homeStyles.css') }}">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha256-fx038NkLY4U1TCrBDiu5FWPEa9eiZu01EiLryshJbCo=" crossorigin="anonymous">
+  <link rel="icon" href="{{asset('icon.png')}}" type="image/x-icon">
   <title>CoV-19</title>
 </head>
 <body>
@@ -76,7 +77,7 @@
             </div>
             <div>
             <div>
-                <h5 class="pcr">
+                <h5 class="pcr mt">
                     PCR TESTING COUNT - {{$detail['total_pcr_testing_count']}} 
                 </h5>
             </div>

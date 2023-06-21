@@ -19,7 +19,8 @@ class DataController extends Controller
             $latestValue = covid_19_detail::max('id');
             $data = covid_19_detail::where('id', $latestValue) -> first();
             
-            if(!$data){
+            if(!$data)
+            {
                 return redirect()->route('FirstData');
             }
                     
@@ -27,7 +28,7 @@ class DataController extends Controller
             
         }
      catch(Exception){
-        abort(404);
+        abort(419);
      }
 
 
@@ -85,13 +86,21 @@ class DataController extends Controller
    //Delete Old Data
    public function destroy()
    {
-    $oldestValue = covid_19_detail::min('id');
-    $data = covid_19_detail::where('id', $oldestValue) -> first();
-    if($data) {
-        $data ->where('id', $oldestValue) -> delete();
+    try
+    {
+        $oldestValue = covid_19_detail::min('id');
+        $data = covid_19_detail::where('id', $oldestValue) -> first();
+        if($data) {
+            $data ->where('id', $oldestValue) -> delete();
+        }
+    
+        return redirect() -> route('home');
+    }
+    catch(\Exception)
+    {
+        return redirect() -> route('home');
     }
 
-    return redirect() -> route('home');
 
    }
 

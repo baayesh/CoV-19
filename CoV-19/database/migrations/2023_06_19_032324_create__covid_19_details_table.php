@@ -11,6 +11,7 @@ return new class extends Migration
     public function up(): void
     {
        Schema::create('covid_19_details', function(Blueprint $table) {
+        $table->increments('id');
         $table -> integer('local_new_cases');
         $table -> integer('local_total_cases');
         $table -> integer('number_of_individuals_in_hospitals');
